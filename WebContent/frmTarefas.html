@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<title>JSP Task</title>
+
+<!-- bootstrap -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<!-- referencias calendario -->
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+
+</head>
+<body>
+
+	<!-- chama o calendario -->
+	<script>
+$(function() {
+    $( "#calendario" ).datepicker();
+});
+</script>
+
+
+	<div class="container">
+
+		<br />
+
+		<div id="divForm">
+
+			<!-- banner -->
+			<div class="alert alert-success" role="alert">
+				<h4 class="alert-heading">JSP TASK 1.0 - Sistema de Cadastro de
+					tarefas WEB.</h4>
+				<hr>
+				<p class="mb-0">Organize suas tarefas diárias com JSP Task!</p>
+			</div>
+
+			<!-- formulario de cadastro de tarefas -->
+			<form action="tarefa/cadastrar" method="get">
+
+				<!-- Data -->
+				<div class="form-group">
+					<output for="calendario">Data:</output>
+					<input id="calendario" type=text name="data" class="form-control"
+						style="width: 150px">
+
+				</div>
+
+				<!-- Tarefa -->
+				<div class="form-group">
+					<output for="edt_tarefa">Tarefa:</output>
+					<input id="edt_tarefa" type=text name="tarefa" class="form-control">
+				</div>
+
+				<!-- Prioridade -->
+				<output for="prio">Prioridade:</output>
+				<select id="prio" class="custom-select" name="prioridade">
+					<option selected value="Baixa">Selecione a prioridade da
+						Tarefa</option>
+					<option value="BAIXA">BAIXA</option>
+					<option value="MEDIA">MEDIA</option>
+					<option value="ALTA">ALTA</option>
+				</select>
+
+				<!-- Observações -->
+				<div class="form-group">
+					<output for="edt_obs">Observações:</output>
+					<input id="edt_obs" type=text name="obs" class="form-control">
+				</div>
+
+				<!-- menu de botoes -->
+				<button type="submit" class="btn btn-secondary btn-sm"
+					onclick="tarefa/consultar">Voltar</button>
+
+				<button type="submit" class="btn btn-success btn-sm">Salvar</button>
+
+			</form>
+		</div>
+	</div>
+</body>
+</html>
